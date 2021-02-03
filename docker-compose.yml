@@ -1,0 +1,16 @@
+version: '3'
+services:
+    presence_system_redis:
+      container_name: presence_system_redis
+      image: "redis:4.0.9" 
+      restart: unless-stopped
+      tty: true
+      ports:
+        - "6376:6379"
+      volumes:
+        - ./redis-data:/data    
+       
+    
+volumes:
+  redis-data: {}
+     
